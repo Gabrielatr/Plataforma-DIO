@@ -2,12 +2,12 @@ import styled from "styled-components";
 
 export const Container = styled.div`
     width: 100%;
-    height: 47px;
+    height: 57px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 0 auto;
+    margin: 0 35px;
 `
 
 export const Row = styled.div`
@@ -25,23 +25,23 @@ export const Column = styled.div`
 export const Wrapper = styled.div`
     background-color: #151515;
     width: 100%;
-    height: 47px;
+    height: 57px;
     display: flex;
     justify-content: center;
     align-items: center;
 `
 
 export const SearchInput = styled.div`
-    width: 175px;
+    width: 200px;
     height: 30px;
     background: #2d2d37;
     border-radius: 8px;
     padding: 2px 5px;
-    margin: 0 12px;
+    margin: 0 40px;
 `
 export const Menu = styled.a`
     font-style: normal;
-    font-size: 15px;
+    font-size: 18px;
     line-height: 25px;
     color: #FFFF;
     margin-right: 12px;
@@ -62,6 +62,7 @@ export const UserPicture = styled.img`
     height: 32px;
     border-radius: 22px;
     border: 2px solid #FFFF;
+    margin-right: 10px;
 `
 
 export const Input = styled.input`
@@ -69,5 +70,8 @@ export const Input = styled.input`
     flex: 1;
     border: 0;
     color: #FFFF;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
 `
 

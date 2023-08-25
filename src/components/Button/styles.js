@@ -4,15 +4,16 @@ export const ButtonContainer = styled.button`
     border-radius: 22px;
     position: relative;
 
-    color: #FFFF;
     background: gray;
     padding: 2px 12px;
+    margin: 0 8px;
     min-width: 120px;
     height: 100%;
     cursor: pointer;
 
     &:hover{
         opacity: 0.6;
+        color: #FFFFFF;
     }
 
     ${({variant}) => variant !== "primary" && css`
@@ -22,6 +23,7 @@ export const ButtonContainer = styled.button`
         background: #E41050;
         border-color: #e41050;
         border-style: double;
+        font-size: 17px;
         padding: 5px;
         background-clip: content-box;
 
@@ -33,6 +35,13 @@ export const ButtonContainer = styled.button`
             width: calc(100% + 10px);
             height: calc(100% + 10px);
             border-radius: 22px;
+        }
+
+        &:hover{
+            opacity: 1;
+            color: black;
+            background-color: purple;
+            border-color: purple;
         }
     `}
 `

@@ -4,12 +4,16 @@ export const Container = styled.main`
     width: 100%;
     max-width: 80%;
     margin: 0 auto;
-    margin-top: 120px;
+    
 
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    
     align-items: center;
+`
+export const Main = styled.div`
+    width: 100%;
+    background-image: url("https://hermes.digitalinnovation.one/public/components/pages/home/header/banner-play.png");
 `
 
 export const Title = styled.h2`
