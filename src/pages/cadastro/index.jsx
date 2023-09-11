@@ -8,7 +8,7 @@ import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
-import { api, registerUser } from '../../services/api';
+import {registerUser } from '../../services/api';
 
 
 
@@ -54,19 +54,15 @@ const Cadastro = () => {
   return (
     <>
     <Header />
-    <div style={{display: "flex", width: "100%", paddingTop: "100px", maxWidth: "80%", margin: "0 auto", flexDirection: "row",
-                justifyContent: "space-between",
-                alignItems: "center", height: "600px"}}>
+    <div style={{display: "flex", paddingTop: "100px", maxWidth: "80%", margin: "0 auto", height: "600px"}}>
       
-      <div style={{ width: "50%", flex: "1",
-                display: "grid", height: "100%",
-                justifyContent: "center"}}>
+      <div style={{ width: "50%", display: "grid", height: "100%", justifyContent: "center"}}>
         <MainText>
           A plataforma para você aprender com experts, dominar as principais tecnologias e entrar mais rápido nas empresas mais desejadas.
         </MainText>
       </div>
 
-      <div style={{ width: "50%", height: "100%", padding: "0 20px", alignContent: "space-evenly", display: "flex", flexDirection: "column"}}>
+      <div style={{ width: "50%", height: "100%", padding: "0 20px", display: "flex", flexDirection: "column"}}>
         
         <TitleText>Comece agora grátis</TitleText>
         <BodyText>Crie sua conta e make the change._</BodyText>
