@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from "react-router-dom"
 import {FiArrowDown} from 'react-icons/fi'
 import { Button } from '../Button'
 import {
@@ -14,11 +15,22 @@ import {
 } from './styles'
 
 function Header({auth}) {
+
+    const navigate = useNavigate();
+
+    const handleClick = (ref) => {
+        navigate(ref);
+    }
+
   return (
     <Wrapper>
         <Container>
             <Row>
-                <img src='https://hermes.digitalinnovation.one/assets/diome/logo-full.svg' width="90px" alt='logo da dio' />
+                <img 
+                    style={{cursor: 'pointer'}} 
+                    src='https://hermes.digitalinnovation.one/assets/diome/logo-full.svg'
+                    onClick={() => handleClick("/")} width="90px" alt='logo da dio'
+                />
                 {auth ? (
                     <>
                     <SearchInput>
@@ -38,9 +50,9 @@ function Header({auth}) {
                     </>
                 ) : (
                     <>
-                    <MenuRight href="#">Home</MenuRight>
-                    <Button title="Cadastrar" />
-                    <Button title="Entrar" />
+                    <MenuRight onClick={() => handleClick("/")}>Home</MenuRight>
+                    <Button onClick={() => handleClick("/cadastro")} title="Cadastrar" />
+                    <Button onClick={() => handleClick("/login") } title="Entrar" />
                     </>
                 )}
             </Row>

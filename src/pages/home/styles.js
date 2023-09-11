@@ -1,21 +1,25 @@
 import styled from "styled-components"
 
-export const Container = styled.main`
-    width: 100%;
-    max-width: 80%;
-    margin: 0 auto;
-    
+export const ImageContainer = styled.div`
+    background-image: url('https://hermes.digitalinnovation.one/public/components/pages/home/header/banner-play.png');
+    justify-content: end;
+    height: 600px;
+    right: 0px;
+    background-position-x: right;
+    background-size: contain; 
+`
 
-    display: flex;
-    flex-direction: row;
-    
+export const TextContainer = styled.div`
+    justify-content: center;
+    width: 800px;
     align-items: center;
+    background-color: rgba(0,0,0,0.9);
+    padding: 60px;
+    padding-top: 100px;
+    position: absolute;
+    height: 600px;
+    box-shadow: 10px 0 5px -2px rgba(0, 0, 0, 0.56);
 `
-export const Main = styled.div`
-    width: 100%;
-    background-image: url("https://hermes.digitalinnovation.one/public/components/pages/home/header/banner-play.png");
-`
-
 export const Title = styled.h2`
     font-style: normal;
     font-weight: 700;

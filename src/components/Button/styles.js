@@ -5,9 +5,9 @@ export const ButtonContainer = styled.button`
     position: relative;
 
     background: gray;
-    padding: 2px 12px;
+    padding: 2px 20px;
     margin: 0 8px;
-    min-width: 120px;
+    max-width: 150px;
     height: 100%;
     cursor: pointer;
 
@@ -17,14 +17,15 @@ export const ButtonContainer = styled.button`
     }
 
     ${({variant}) => variant !== "primary" && css`
-        min-width: 167px;
-        width: 80%;
+        min-width: 250px;
+        max-width: 250px;
+        color: white;
         height: 40px;
         background: #E41050;
         border-color: #e41050;
         border-style: double;
-        font-size: 17px;
-        padding: 5px;
+        font-size: 16px;
+        padding: 4px 5px;
         background-clip: content-box;
 
         &::after{
@@ -39,7 +40,6 @@ export const ButtonContainer = styled.button`
 
         &:hover{
             opacity: 1;
-            color: black;
             background-color: purple;
             border-color: purple;
         }
