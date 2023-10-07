@@ -3,6 +3,7 @@ import { Button } from "../../components/Button"
 import { Header } from "../../components/Header"
 
 import { TextContainer, ImageContainer, TextContent, Title, TitleHighlight } from './styles'
+import React from "react"
 
 const Home = () => {
 

@@ -3,6 +3,7 @@ import { UserInfo } from "../../components/UserInfo"
 import { Card } from "../../components/Card"
 
 import { Container, Column, TitleHighlight } from './styles'
+import React from "react"
 
 const Feed = () => {
     return (

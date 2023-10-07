@@ -9,6 +9,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { Button } from '../../components/Button';
 import { useNavigate } from 'react-router-dom';
 import {registerUser } from '../../services/api';
+import { IFormData } from './types';
 
 
 
@@ -16,8 +17,8 @@ const schema = yup
   .object({
     nome: yup.string().required('Campo obrigatório')
              .matches(/^[aA-zZ\s]+$/, "Somente letras são permitidas no campo"),
-    email: yup.string().email('Email inválido').required('Campo obrigatório'),
-    senha: yup.string().min(5, '5 caracteres no mínimo').required('Campo obrigatório'),
+    Email: yup.string().email('Email inválido').required('Campo obrigatório'),
+    Password: yup.string().min(5, '5 caracteres no mínimo').required('Campo obrigatório'),
   })
   .required()
 
@@ -33,23 +34,21 @@ const Cadastro = () => {
     mode: 'onChange',
   });
 
-  const onSubmit = async (formData) => {
+  const onSubmit = async (formData: IFormData) => {
     try{
       const result = await registerUser(formData);
       console.log(result);
       navigate("/feed");
     }catch(e){
-        alert("Houve um erro.", e);
+        alert("Houve um erro.");
     }
 }
 
   const navigate = useNavigate();
     
-    const handleClick = (ref) => {
+    const handleClick = ({ref}:any) => {
         navigate(ref);
     }
-
-
 
   return (
     <>
@@ -70,8 +69,8 @@ const Cadastro = () => {
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <Input name="nome" placeholder="Nome Completo" leftIcon={<FiUser color='purple' />} errorMessage={errors?.nome?.message} control={control} />
-          <Input name="email" placeholder="Email" leftIcon={<FiMail color='purple' />} errorMessage={errors?.email?.message} control={control} />
-          <Input name="senha" placeholder="Password" leftIcon={<FiLock color='purple' />} errorMessage={errors?.senha?.message} control={control} />
+          <Input name="Email" placeholder="Email" leftIcon={<FiMail color='purple' />} errorMessage={errors?.Email?.message} control={control} />
+          <Input name="Password" placeholder="Password" leftIcon={<FiLock color='purple' />} errorMessage={errors?.Password?.message} control={control} />
           <Button title="Criar minha conta" variant='secundary' type="submit"/>
         </form>
 

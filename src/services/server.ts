@@ -1,3 +1,5 @@
+import { IServer } from "./types";
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -6,11 +8,11 @@ const fs = require('fs');
 
 app.use(bodyParser.json());
 
-app.post('/users', async (req, res) => {
+app.post('/users', async ({req, res} : IServer) => {
     const { nome, email, senha } = req.body;
     const newUser = { nome, email, senha, };
 
-      fs.readFile('db.json', 'utf8', (err, data) => {
+      fs.readFile('db.json', 'utf8', ({err, data} : IServer) => {
         if (err) {
           console.error(err);
           res.status(500).json({ message: 'Erro ao ler o arquivo JSON.' });
@@ -20,7 +22,7 @@ app.post('/users', async (req, res) => {
         let json = JSON.parse(data);
         json.data.push(newUser);
 
-        fs.writeFile('db.json', JSON.stringify(json, null, 2), (err) => {
+        fs.writeFile('db.json', JSON.stringify(json, null, 2), ({err}: IServer) => {
         if (err) {
             console.error(err);
             res.status(500).json({ message: 'Erro ao escrever no arquivo JSON.' });

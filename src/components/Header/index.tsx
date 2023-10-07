@@ -1,10 +1,9 @@
 import React from 'react'
-import { useNavigate } from "react-router-dom"
+import { To, useNavigate } from "react-router-dom"
 import {FiArrowDown} from 'react-icons/fi'
 import { Button } from '../Button'
 import {
     SearchInput,
-    Column,
     Container,
     Row,
     Input,
@@ -13,12 +12,13 @@ import {
     Wrapper,
     UserPicture
 } from './styles'
+import { IHeader } from './types'
 
-function Header({auth}) {
+function Header({auth}: IHeader) {
 
     const navigate = useNavigate();
 
-    const handleClick = (ref) => {
+    const handleClick = (ref: To) => {
         navigate(ref);
     }
 

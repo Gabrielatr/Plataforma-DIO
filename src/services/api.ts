@@ -1,12 +1,13 @@
 import axios from "axios";
+import { IFormData } from "./types";
 
 const api = axios.create({
     baseURL: "http://localhost:8001",
 });
 
-const registerUser = async (formData) => {
+const registerUser = async (formData: IFormData) => {
     try {
-      const response = await api.post("/users", formData);
+      const response = await api.post("/users", {formData});
       return response.data;
     } catch (error) {
       console.error(error);
